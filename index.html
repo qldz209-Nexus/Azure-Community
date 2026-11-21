@@ -25,7 +25,7 @@
 
     .box {
       width: 100%;
-      max-width: 540px;
+      max-width: 560px;
       background-color: #0c0c0e;
       border: 1px solid #232328;
       border-radius: 20px;
@@ -45,7 +45,7 @@
       background-color: #131317;
       border: 1px solid #232329;
       border-radius: 14px;
-      padding: 15px 16px;
+      padding: 16px;
       margin-bottom: 14px;
     }
 
@@ -55,7 +55,7 @@
       text-transform: uppercase;
       letter-spacing: 0.06em;
       color: #a1a1aa;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     p {
@@ -68,13 +68,13 @@
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 9px;
-      margin-top: 10px;
+      gap: 11px;
+      margin-top: 12px;
     }
 
     .info-list li {
       font-size: 13.8px;
-      line-height: 1.6;
+      line-height: 1.62;
       color: #d4d4d8;
       padding-left: 12px;
       border-left: 2px solid #3f3f46;
@@ -82,6 +82,15 @@
 
     .info-list strong {
       color: #ffffff;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12.8px;
+      background-color: #1c1c22;
+      color: #f4f4f5;
+      padding: 1px 5px;
+      border-radius: 5px;
     }
 
     .links {
@@ -110,13 +119,13 @@
     }
 
     .btn-discord {
-      background-color: #17171b;
+      background-color: #18181d;
       color: #ffffff;
-      border: 1px solid #32323a;
+      border: 1px solid #3a3a44;
     }
 
     .btn-discord:hover {
-      background-color: #202026;
+      background-color: #222229;
     }
 
     .btn-tiktok {
@@ -129,22 +138,12 @@
       background-color: #e4e4e7;
     }
 
-    .discord-icon {
-      width: 24px;
-      height: 20px;
-      min-width: 24px;
+    .icon-svg {
+      width: 22px;
+      height: 22px;
+      min-width: 22px;
       flex-shrink: 0;
       display: block;
-      color: #ffffff;
-    }
-
-    .tiktok-icon {
-      width: 20px;
-      height: 20px;
-      min-width: 20px;
-      flex-shrink: 0;
-      display: block;
-      color: #050505;
     }
   </style>
 </head>
@@ -155,32 +154,43 @@
     <div class="section">
       <div class="label">Tiếng Việt</div>
       <p>
-        Azure Community / Launcher Support 🛠 Nếu bạn thắc mắc Server mình làm về gì? Thì là một sân chơi chuyên sâu dành riêng cho anh em đam mê trải nghiệm Minecraft Java trên các thiết bị iOS. Tham gia Server mình nếu bạn muốn chơi hoặc tìm hiểu về Minecraft Java trên iOS, và follow TikTok @nexusamethyst để xem video hướng dẫn nhé!
+        <strong>Azure Community / Launcher Support 🛠</strong> Nếu bạn thắc mắc Server mình làm về gì? Thì là một sân chơi chuyên sâu dành riêng cho anh em đam mê trải nghiệm Minecraft Java trên các thiết bị iOS. Tham gia Server mình nếu bạn muốn chơi hoặc tìm hiểu về Minecraft Java trên iOS, và follow TikTok @nexusamethyst để xem video hướng dẫn nhé!
       </p>
       <ul class="info-list">
-        <li><strong>Launcher iOS là gì?</strong> Trình khởi chạy giúp đưa Minecraft Java Edition lên iPhone/iPad thông qua môi trường runtime JVM, modloader và lớp dịch đồ họa.</li>
-        <li><strong>Witch Launcher:</strong> Launcher tối ưu trải nghiệm Minecraft Java trên iOS với giao diện gọn nhẹ, quản lý phiên bản/mod và cấu hình linh hoạt.</li>
-        <li><strong>Amethyst Launcher:</strong> Launcher mã nguồn mở cho iOS hỗ trợ chạy Minecraft Java mượt mà, tùy biến JVM/renderer và mở rộng cấu hình nâng cao.</li>
-        <li><strong>Cách hoạt động:</strong> Tải game &amp; runtime Java → chọn phiên bản/mod (Fabric, mod tối ưu) → dịch lệnh OpenGL/Vulkan sang Metal của iOS → khởi chạy và chơi.</li>
-        <li><strong>Cài bằng SideStore (iOS cao):</strong> Bật VPN/LocalDevVPN &amp; StikDebug (nếu cần JIT) → mở SideStore → cài file <code>.ipa</code> của Launcher → tin cậy chứng chỉ Apple ID trong Cài đặt → làm mới định kỳ (7 ngày với tài khoản miễn phí).</li>
+        <li>
+          <strong>Launcher iOS là gì?</strong> Là ứng dụng trình khởi chạy giúp đưa Minecraft Java Edition lên iPhone/iPad vốn không hỗ trợ gốc file JAR và máy ảo Java của desktop. Launcher quản lý phiên bản game, môi trường chạy Java (JVM), modloader (như Fabric) và lớp dịch đồ họa để game khởi chạy được trên iOS.
+        </li>
+        <li>
+          <strong>Witch Launcher là gì?</strong> Là một launcher dành cho Minecraft Java trên iOS hướng tới trải nghiệm gọn gàng, dễ thao tác, hỗ trợ quản lý phiên bản, mod tối ưu/hiệu năng và tinh chỉnh cấu hình nhanh cho người chơi trên iPhone/iPad.
+        </li>
+        <li>
+          <strong>Amethyst Launcher là gì?</strong> Là launcher mã nguồn mở cho iOS được phát triển để chạy Minecraft Java mượt mà hơn, cho phép tùy biến sâu runtime Java, chọn renderer đồ họa, tham số JVM và cấu hình nâng cao theo từng thiết bị.
+        </li>
+        <li>
+          <strong>Cách hoạt động chi tiết:</strong> Khi bấm vào game, launcher chuẩn bị file game &amp; runtime Java phù hợp (ví dụ Java 17/21/25 tùy phiên bản Minecraft), tải modloader/mod (như Sodium, Lithium, FerriteCore...), sau đó dịch các lệnh đồ họa OpenGL hoặc Vulkan của Minecraft sang API <code>Metal</code> của iOS thông qua các renderer (như MobileGlues, Zink, LTW, gl4es, MoltenVK) và kích hoạt JIT nếu thiết bị/cấu hình yêu cầu để tăng hiệu năng.
+        </li>
+        <li>
+          <strong>Cách cài bằng SideStore trên iOS cao (ngắn gọn):</strong> Cài SideStore qua công cụ ký ứng dụng → bật VPN / <code>LocalDevVPN</code> và hỗ trợ kích hoạt JIT (như <code>StikDebug</code> nếu dùng bản cần JIT) → mở SideStore và cài file <code>.ipa</code> của Launcher → vào <em>Cài đặt → Quản lý VPN &amp; Thiết bị</em> để tin cậy chứng chỉ Apple ID → nhớ làm mới (Refresh) định kỳ trước hạn 7 ngày với tài khoản miễn phí.
+        </li>
       </ul>
     </div>
 
     <div class="section">
       <div class="label">English</div>
       <p>
-        Azure Community / Launcher Support 🛠 Wondering what our Server is all about? It is a dedicated hub built for players passionate about experiencing Minecraft Java on iOS devices. Join our Server if you want to play or explore Minecraft Java on iOS, and follow TikTok @nexusamethyst to watch tutorial videos!
+        <strong>Azure Community / Launcher Support 🛠</strong> Wondering what our Server is all about? It is a dedicated hub built for players passionate about experiencing Minecraft Java on iOS devices. Join our Server if you want to play or explore Minecraft Java on iOS, and follow TikTok @nexusamethyst to watch tutorial videos!
       </p>
       <ul class="info-list">
-        <li><strong>What is an iOS Launcher?</strong> A launcher that runs Minecraft Java Edition on iPhone/iPad using a JVM runtime, modloaders, and graphics translation layers.</li>
-        <li><strong>Witch Launcher:</strong> An iOS Minecraft Java launcher focused on a clean interface, easy version/mod management, and flexible setup.</li>
-        <li><strong>Amethyst Launcher:</strong> An open-source iOS launcher built for smooth Minecraft Java play with customizable JVM/renderer options and advanced tuning.</li>
-        <li><strong>How It Works:</strong> Prepare game files &amp; Java runtime → select version/mods → translate OpenGL/Vulkan calls to iOS Metal → launch and play.</li>
-        <li><strong>SideStore on High iOS:</strong> Enable VPN/LocalDevVPN &amp; StikDebug (if JIT is needed) → install the Launcher <code>.ipa</code> via SideStore → trust your Apple ID profile in Settings → refresh regularly.</li>
-      </ul>
-    </div>
-
-    <div class="links">
-      <a class="btn btn-discord" href="https://discord.gg/azurecommunity" target="_blank" rel="noopener">
-        <svg class="discord-icon" viewBox="0 0 127.14 96.36" fill="currentColor" aria-hidden="true">
-          <path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.3
+        <li>
+          <strong>What is an iOS Launcher?</strong> A specialized launcher app that brings Minecraft Java Edition to iPhone/iPad, managing game versions, Java virtual machine (JVM) runtimes, modloaders (such as Fabric), and graphics translation layers on iOS.
+        </li>
+        <li>
+          <strong>Witch Launcher:</strong> An iOS Minecraft Java launcher designed for a clean, accessible workflow with straightforward version/mod management and practical configuration options on mobile.
+        </li>
+        <li>
+          <strong>Amethyst Launcher:</strong> An open-source iOS launcher focused on smooth Minecraft Java gameplay, offering deeper control over Java runtimes, graphics renderers, JVM flags, and advanced tuning.
+        </li>
+        <li>
+          <strong>How It Works:</strong> The launcher prepares the game files and matching Java runtime (e.g., Java 17/21/25), loads mods/modloaders, translates Minecraft's OpenGL or Vulkan rendering calls into iOS <code>Metal</code> via renderers (such as MobileGlues, Zink, LTW, gl4es, or MoltenVK), and uses JIT when required for better performance.
+        </li>
+        <li>
