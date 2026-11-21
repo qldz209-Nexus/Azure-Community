@@ -11,19 +11,25 @@
       padding: 0;
     }
 
+    html,
     body {
-      background-color: #f4f6f9;
-      color: #111827;
+      width: 100%;
+      min-height: 100%;
+      background-color: #070709;
+      color: #f4f4f6;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      padding: 20px 14px 36px;
       line-height: 1.6;
+    }
+
+    body {
+      padding: 20px 14px 36px;
     }
 
     .box {
       max-width: 600px;
       margin: 0 auto;
-      background-color: #ffffff;
-      border: 1px solid #e5e7eb;
+      background-color: #0e0e12;
+      border: 1px solid #22222a;
       border-radius: 18px;
       padding: 24px 18px;
     }
@@ -32,7 +38,7 @@
       text-align: center;
       padding-bottom: 18px;
       margin-bottom: 18px;
-      border-bottom: 1px solid #e5e7eb;
+      border-bottom: 1px solid #22222a;
     }
 
     .avatar {
@@ -42,25 +48,25 @@
       object-fit: cover;
       display: block;
       margin: 0 auto 12px;
-      background-color: #e5e7eb;
-      border: 2px solid #d1d5db;
+      background-color: #18181f;
+      border: 2px solid #343440;
     }
 
     h1 {
       font-size: 22px;
       font-weight: 700;
-      color: #111827;
+      color: #ffffff;
     }
 
     .subtitle {
       margin-top: 6px;
       font-size: 13.5px;
-      color: #4b5563;
+      color: #a1a1aa;
     }
 
     .section {
-      background-color: #f9fafb;
-      border: 1px solid #e5e7eb;
+      background-color: #14141a;
+      border: 1px solid #24242e;
       border-radius: 14px;
       padding: 16px;
       margin-bottom: 16px;
@@ -71,8 +77,9 @@
       font-size: 11.5px;
       font-weight: 700;
       text-transform: uppercase;
-      color: #1d4ed8;
-      background-color: #dbeafe;
+      color: #e4e4e7;
+      background-color: #23232d;
+      border: 1px solid #343442;
       padding: 4px 10px;
       border-radius: 6px;
       margin-bottom: 10px;
@@ -80,10 +87,10 @@
 
     .intro {
       font-size: 14px;
-      color: #111827;
-      background-color: #ffffff;
-      border: 1px solid #e5e7eb;
-      border-left: 3px solid #2563eb;
+      color: #f4f4f6;
+      background-color: #0f0f14;
+      border: 1px solid #252530;
+      border-left: 3px solid #ffffff;
       border-radius: 10px;
       padding: 12px;
       margin-bottom: 12px;
@@ -94,13 +101,13 @@
     }
 
     .list li {
-      background-color: #ffffff;
-      border: 1px solid #e5e7eb;
+      background-color: #0f0f14;
+      border: 1px solid #23232c;
       border-radius: 10px;
       padding: 12px;
       margin-bottom: 10px;
       font-size: 13.5px;
-      color: #374151;
+      color: #d4d4d8;
     }
 
     .list li:last-child {
@@ -109,13 +116,14 @@
 
     .list strong {
       display: block;
-      color: #111827;
+      color: #ffffff;
       margin-bottom: 4px;
     }
 
     code {
-      background-color: #f3f4f6;
-      color: #111827;
+      background-color: #1d1d26;
+      color: #f4f4f6;
+      border: 1px solid #2f2f3c;
       padding: 1px 5px;
       border-radius: 4px;
       font-size: 12px;
@@ -124,7 +132,7 @@
     .links {
       margin-top: 20px;
       padding-top: 18px;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid #22222a;
     }
 
     .links-title {
@@ -132,7 +140,7 @@
       font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
-      color: #6b7280;
+      color: #a1a1aa;
       margin-bottom: 12px;
     }
 
@@ -160,9 +168,9 @@
     }
 
     .btn-tiktok {
-      background-color: #ffffff;
-      color: #111827;
-      border: 2px solid #111827;
+      background-color: #18181f;
+      color: #ffffff;
+      border: 1px solid #52525b;
     }
 
     .icon-svg {
@@ -175,9 +183,40 @@
       margin-top: 14px;
       text-align: center;
       font-size: 12px;
-      color: #6b7280;
+      color: #71717a;
     }
   </style>
 </head>
 <body>
-  <main class
+  <main class="box">
+    <header class="header">
+      <img
+        class="avatar"
+        src="https://cdn.discordapp.com/attachments/1568204986909724805/1573632237797376082/61DD7773-2649-43FE-B36B-A2276C58D790.png?ex=6b02b6ba&is=6b01653a&hm=043d7a8b46fe8c5ef400c234a4b2f04fff33e6867a68e1cbc53bfd89ae3e1f1c&"
+        alt="Azure Community Avatar"
+        onerror="this.onerror=null;this.src='avatar.png';"
+      />
+      <h1>Azure Community / Launcher Support 🛠</h1>
+      <p class="subtitle">Hướng dẫn tổng quan, cơ chế hoạt động, tối ưu cấu hình &amp; liên kết hỗ trợ cộng đồng</p>
+    </header>
+
+    <section class="section">
+      <span class="label">Tiếng Việt</span>
+      <p class="intro">
+        <strong>Azure Community / Launcher Support 🛠</strong> là cộng đồng chuyên sâu dành cho người dùng muốn chạy và tối ưu <strong>Minecraft Java Edition</strong> trên iPhone/iPad. Tại đây bạn có thể trao đổi cấu hình theo từng đời máy, xử lý lỗi khởi chạy, chọn renderer/mod phù hợp và tham khảo video hướng dẫn trên TikTok <code>@nexusamethyst</code>.
+      </p>
+      <ul class="list">
+        <li>
+          <strong>Launcher iOS là gì?</strong>
+          Là trình khởi chạy chuyên biệt giúp đưa Minecraft Java Edition lên iOS/iPadOS vốn không chạy trực tiếp file <code>.jar</code> và máy ảo Java của desktop. Launcher tự động chuẩn bị tài nguyên game, runtime Java (JVM), modloader (như Fabric) và lớp dịch đồ họa để game hoạt động trên phần cứng di động.
+        </li>
+        <li>
+          <strong>Witch Launcher là gì?</strong>
+          Là launcher Minecraft Java trên iOS hướng đến sự gọn gàng, trực quan và thao tác nhanh—phù hợp để quản lý phiên bản, bật/tắt mod tối ưu và tinh chỉnh thiết lập cơ bản mà không mất nhiều thời gian làm quen.
+        </li>
+        <li>
+          <strong>Amethyst Launcher là gì?</strong>
+          Là launcher mã nguồn mở cho iOS tập trung vào hiệu năng cao và khả năng tùy biến chi tiết, hỗ trợ quản lý nhiều phiên bản Java runtime, chuyển đổi linh hoạt giữa các renderer đồ họa, tùy chỉnh tham số JVM và cấu hình chuyên sâu theo từng thiết bị.
+        </li>
+        <li>
+          <strong>C
