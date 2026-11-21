@@ -11,43 +11,33 @@
       padding: 0;
     }
 
-    html {
-      height: auto;
-      background-color: #070709;
-    }
-
+    html,
     body {
-      width: 100%;
-      height: auto;
-      min-height: 100vh;
       background-color: #070709;
       color: #f4f4f6;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       font-size: 14px;
       line-height: 1.65;
+    }
+
+    body {
       padding: 20px 14px 48px;
-      overflow-x: hidden;
     }
 
     .box {
-      display: block;
-      width: 100%;
       max-width: 600px;
-      height: auto;
       margin: 0 auto;
       background-color: #0e0e12;
-      border: 1px solid #22222a;
+      border: 1px solid #23232c;
       border-radius: 18px;
-      padding: 24px 18px;
-      overflow: visible;
+      padding: 22px 16px;
     }
 
     .header {
-      display: block;
       text-align: center;
       padding-bottom: 18px;
       margin-bottom: 18px;
-      border-bottom: 1px solid #22222a;
+      border-bottom: 1px solid #23232c;
     }
 
     .avatar {
@@ -57,12 +47,12 @@
       object-fit: cover;
       display: block;
       margin: 0 auto 12px;
-      background-color: #18181f;
-      border: 2px solid #343440;
+      background-color: #181820;
+      border: 2px solid #353542;
     }
 
     h1 {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 700;
       color: #ffffff;
     }
@@ -74,15 +64,11 @@
     }
 
     .section {
-      display: block;
-      width: 100%;
-      height: auto;
       background-color: #14141a;
       border: 1px solid #24242e;
       border-radius: 14px;
-      padding: 16px;
+      padding: 15px;
       margin-bottom: 18px;
-      overflow: visible;
     }
 
     .label {
@@ -90,72 +76,59 @@
       font-size: 11.5px;
       font-weight: 700;
       text-transform: uppercase;
-      color: #e4e4e7;
-      background-color: #23232d;
-      border: 1px solid #343442;
+      color: #f4f4f6;
+      background-color: #24242f;
+      border: 1px solid #363646;
       padding: 4px 10px;
       border-radius: 6px;
       margin-bottom: 12px;
     }
 
     .intro {
-      display: block;
-      width: 100%;
-      height: auto;
       font-size: 14px;
       color: #f4f4f6;
       background-color: #0f0f14;
-      border: 1px solid #252530;
+      border: 1px solid #262632;
       border-left: 3px solid #ffffff;
       border-radius: 10px;
       padding: 12px;
-      margin-bottom: 12px;
-      overflow: visible;
+      margin-bottom: 10px;
     }
 
-    .card-item {
-      display: block;
-      width: 100%;
-      height: auto;
+    .item {
       background-color: #0f0f14;
-      border: 1px solid #23232c;
+      border: 1px solid #23232d;
       border-radius: 10px;
       padding: 12px;
       margin-bottom: 10px;
       font-size: 13.5px;
       color: #d4d4d8;
-      overflow: visible;
     }
 
-    .card-item:last-child {
+    .item:last-child {
       margin-bottom: 0;
     }
 
-    .card-title {
+    .item-title {
       display: block;
-      width: 100%;
       font-weight: 700;
       color: #ffffff;
       margin-bottom: 4px;
     }
 
     code {
-      background-color: #1d1d26;
-      color: #f4f4f6;
-      border: 1px solid #2f2f3c;
+      background-color: #1d1d27;
+      color: #ffffff;
+      border: 1px solid #303040;
       padding: 1px 5px;
       border-radius: 4px;
       font-size: 12px;
     }
 
     .links {
-      display: block;
-      width: 100%;
-      height: auto;
       margin-top: 20px;
       padding-top: 18px;
-      border-top: 1px solid #22222a;
-      overflow: visible;
+      border-top: 1px solid #23232c;
     }
 
     .links-title {
@@ -177,22 +150,23 @@
       font-size: 15px;
       font-weight: 600;
       margin-bottom: 12px;
+      color: #ffffff;
     }
 
     .btn-left {
       display: flex;
       align-items: center;
       gap: 10px;
+      color: #ffffff;
     }
 
     .btn-discord {
       background-color: #5865f2;
-      color: #ffffff;
+      border: 1px solid #5865f2;
     }
 
     .btn-tiktok {
-      background-color: #18181f;
-      color: #ffffff;
+      background-color: #181820;
       border: 1px solid #52525b;
     }
 
@@ -200,6 +174,7 @@
       width: 22px;
       height: 22px;
       flex-shrink: 0;
+      display: block;
     }
 
     .footer {
@@ -215,4 +190,72 @@
     <header class="header">
       <img
         class="avatar"
-        src="
+        src="https://cdn.discordapp.com/attachments/1568204986909724805/1573632237797376082/61DD7773-2649-43FE-B36B-A2276C58D790.png?ex=6b02b6ba&is=6b01653a&hm=043d7a8b46fe8c5ef400c234a4b2f04fff33e6867a68e1cbc53bfd89ae3e1f1c&"
+        alt="Azure Community Avatar"
+        onerror="this.onerror=null;this.src='avatar.png';"
+      />
+      <h1>Azure Community / Launcher Support 🛠</h1>
+      <p class="subtitle">Overview guide, core mechanics, performance tuning &amp; community support links</p>
+    </header>
+
+    <section class="section">
+      <span class="label">Tiếng Việt</span>
+      <div class="intro">
+        <strong>Azure Community / Launcher Support 🛠</strong> là cộng đồng chuyên sâu dành cho người dùng muốn chạy và tối ưu <strong>Minecraft Java Edition</strong> trên iPhone/iPad. Tại đây bạn có thể trao đổi cấu hình theo từng đời máy, xử lý lỗi khởi chạy, chọn renderer/mod phù hợp và tham khảo video hướng dẫn trên TikTok <code>@nexusamethyst</code>.
+      </div>
+
+      <div class="item">
+        <span class="item-title">Launcher iOS là gì?</span>
+        Là trình khởi chạy chuyên biệt giúp đưa Minecraft Java Edition lên iOS/iPadOS vốn không chạy trực tiếp file <code>.jar</code> và máy ảo Java của desktop. Launcher tự động chuẩn bị tài nguyên game, runtime Java (JVM), modloader (như Fabric) và lớp dịch đồ họa để game hoạt động trên phần cứng di động.
+      </div>
+
+      <div class="item">
+        <span class="item-title">Witch Launcher là gì?</span>
+        Là launcher Minecraft Java trên iOS hướng đến sự gọn gàng, trực quan và thao tác nhanh—phù hợp để quản lý phiên bản, bật/tắt mod tối ưu và tinh chỉnh thiết lập cơ bản mà không mất nhiều thời gian làm quen.
+      </div>
+
+      <div class="item">
+        <span class="item-title">Amethyst Launcher là gì?</span>
+        Là launcher mã nguồn mở cho iOS tập trung vào hiệu năng cao và khả năng tùy biến chi tiết, hỗ trợ quản lý nhiều phiên bản Java runtime, chuyển đổi linh hoạt giữa các renderer đồ họa, tùy chỉnh tham số JVM và cấu hình chuyên sâu theo từng thiết bị.
+      </div>
+
+      <div class="item">
+        <span class="item-title">Cơ chế hoạt động &amp; thành phần cốt lõi</span>
+        Khi khởi chạy, launcher chuẩn bị file game cùng runtime Java tương ứng (<code>Java 17</code>, <code>Java 21</code> hoặc <code>Java 25</code> tùy phiên bản Minecraft) và tải modloader như Fabric kết hợp các mod tối ưu phổ biến (<code>Sodium</code>, <code>Lithium</code>, <code>FerriteCore</code>, <code>ModernFix</code>...). Sau đó, các lệnh đồ họa OpenGL hoặc Vulkan của game được dịch sang API đồ họa <code>Metal</code> của iOS thông qua các renderer như <code>MobileGlues</code>, <code>Zink</code>, <code>LTW</code>, <code>gl4es</code> hoặc <code>MoltenVK</code>. <b>Bắt buộc phải kích hoạt JIT thì mới có thể chạy và chơi được game.</b>
+      </div>
+
+      <div class="item">
+        <span class="item-title">Chọn Renderer &amp; cân đối tài nguyên</span>
+        Mỗi renderer có ưu thế riêng tùy phiên bản Minecraft, GPU và việc dùng shader hay không. Khi đổi renderer, thêm mod hoặc bật shader, nên test từng thay đổi một, cấp phát dung lượng RAM hợp lý và giảm bớt render distance nếu máy nóng hoặc giật lag.
+      </div>
+
+      <div class="item">
+        <span class="item-title">Cách cài bằng SideStore trên iOS (chi tiết)</span>
+        Cài SideStore qua công cụ ký ứng dụng và đăng nhập tài khoản Apple ID → bật VPN / <code>LocalDevVPN</code> và công cụ kích hoạt JIT như <code>StikDebug</code> (<b>bắt buộc bật JIT mới chơi được</b>) → mở SideStore, chọn file <code>.ipa</code> của Launcher để cài đặt → vào <em>Cài đặt → Quản lý VPN &amp; Thiết bị</em> để tin cậy chứng chỉ Apple ID → mở SideStore làm mới (Refresh) định kỳ trước mốc 7 ngày nếu dùng Apple ID miễn phí.
+      </div>
+    </section>
+
+    <section class="section">
+      <span class="label">English</span>
+      <div class="intro">
+        <strong>Azure Community / Launcher Support 🛠</strong> is a dedicated hub for players running and tuning <strong>Minecraft Java Edition</strong> on iPhone and iPad. Join the community to share device-specific setups, troubleshoot launch issues, pick the right renderer and mods, and follow TikTok <code>@nexusamethyst</code> for tutorial videos.
+      </div>
+
+      <div class="item">
+        <span class="item-title">What is an iOS Launcher?</span>
+        A specialized launcher app that brings Minecraft Java Edition to iPhone/iPad, which do not natively run desktop <code>.jar</code> packages or standard desktop JVM setups. It manages game versions, Java virtual machine (JVM) runtimes, modloaders (such as Fabric), and graphics translation layers on iOS.
+      </div>
+
+      <div class="item">
+        <span class="item-title">Witch Launcher</span>
+        An iOS Minecraft Java launcher designed for a clean, approachable workflow with straightforward version/mod management and practical configuration options for fast setup on mobile.
+      </div>
+
+      <div class="item">
+        <span class="item-title">Amethyst Launcher</span>
+        An open-source iOS launcher focused on smooth Minecraft Java performance and granular control, allowing deeper management of Java runtimes, graphics renderers, JVM flags, and device-level tuning.
+      </div>
+
+      <div class="item">
+        <span class="item-title">How It Works &amp; Core Components</span>
+        The launcher prepares game files with a matching Java runtime (e.g., <code>Java 17</code>, <code>Java 21</code>, or <code>Java 25</code> depending on the Minecraft version) and loads modloaders such as Fabric alongside optimization mods (<code>Sodium</code>
