@@ -5,62 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Azure Community / Launcher Support</title>
   <style>
-    :root {
-      --bg-page: #060608;
-      --bg-card: #0d0d11;
-      --bg-surface: #131319;
-      --bg-surface-2: #181820;
-      --bg-surface-hover: #1d1d27;
-      --border-subtle: #23232d;
-      --border-strong: #353545;
-      --text-primary: #f8fafc;
-      --text-secondary: #d4d4df;
-      --text-muted: #9898a8;
-      --accent-azure: #38bdf8;
-      --accent-discord: #5865f2;
-      --accent-discord-hover: #6571f7;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       min-height: 100vh;
-      background-color: var(--bg-page);
-      background-image:
-        radial-gradient(ellipse 85% 45% at 50% 0%, rgba(88, 101, 242, 0.14), transparent 70%),
-        radial-gradient(ellipse 65% 35% at 50% 0%, rgba(56, 189, 248, 0.07), transparent 65%);
-      color: var(--text-primary);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
-      padding: 20px 14px 36px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      background-color: #050505;
+      background-image: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.06), transparent 60%);
+      color: #f5f5f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
     }
 
     .box {
       width: 100%;
-      max-width: 640px;
-      margin: 0 auto;
-      background-color: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 24px;
-      padding: 26px 18px;
-      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
-    }
-
-    /* Header */
-    .header {
-      text-align: center;
-      padding-bottom: 20px;
-      margin-bottom: 18px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      max-width: 560px;
+      background-color: #0c0c0e;
+      border: 1px solid #232328;
+      border-radius: 20px;
+      padding: 28px 22px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.9);
     }
 
     .avatar-wrap {
@@ -70,347 +40,134 @@
     }
 
     .avatar {
-      width: 98px;
-      height: 98px;
+      width: 92px;
+      height: 92px;
       border-radius: 50%;
       object-fit: cover;
       object-position: center;
       display: block;
-      background-color: #181820;
-      border: 2px solid rgba(255, 255, 255, 0.24);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.65);
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-size: 11.5px;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--accent-azure);
-      background-color: rgba(56, 189, 248, 0.1);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 5px 12px;
-      border-radius: 999px;
-      margin-bottom: 12px;
-    }
-
-    .badge-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background-color: var(--accent-azure);
+      background-color: #18181f;
+      border: 2px solid rgba(255, 255, 255, 0.22);
     }
 
     h1 {
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 700;
-      letter-spacing: -0.02em;
       color: #ffffff;
-      line-height: 1.3;
-    }
-
-    .subtitle {
-      margin-top: 8px;
-      font-size: 13.5px;
-      color: var(--text-muted);
-    }
-
-    /* Toolbar */
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 14px;
-      padding: 10px 12px;
       margin-bottom: 18px;
-    }
-
-    .lang-group {
-      display: inline-flex;
-      background-color: #0b0b0f;
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 3px;
-      gap: 3px;
-    }
-
-    .lang-btn {
-      appearance: none;
-      border: none;
-      background: transparent;
-      color: var(--text-muted);
-      font-family: inherit;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 6px 11px;
-      border-radius: 7px;
-      cursor: pointer;
-    }
-
-    .lang-btn.active {
-      background-color: #22222e;
-      color: #ffffff;
-    }
-
-    .quick-nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .nav-pill {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      text-decoration: none;
-      background-color: var(--bg-surface-2);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 5px 10px;
-      border-radius: 8px;
-    }
-
-    .nav-pill:hover {
-      background-color: var(--bg-surface-hover);
-      color: #ffffff;
-      border-color: var(--border-strong);
-    }
-
-    /* Language Blocks */
-    .lang-block {
-      display: none;
-    }
-
-    .lang-block.active {
-      display: block;
+      text-align: center;
     }
 
     .section {
-      background-color: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: 18px;
-      padding: 18px;
-      margin-bottom: 16px;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 12px;
+      background-color: #131317;
+      border: 1px solid #232329;
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
     }
 
     .label {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 11.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #c2c2d2;
-      background-color: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 4px 10px;
-      border-radius: 8px;
-    }
-
-    .section-tag {
-      font-size: 11.5px;
-      color: var(--text-muted);
-    }
-
-    .intro-text {
-      font-size: 14.2px;
-      line-height: 1.7;
-      color: var(--text-primary);
-      padding-bottom: 14px;
-      border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
-    }
-
-    .sub-heading {
-      margin-top: 16px;
-      margin-bottom: 10px;
-      font-size: 12.5px;
+      font-size: 12px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--accent-azure);
+      color: #a1a1aa;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 14.5px;
+      line-height: 1.65;
+      color: #e4e4e7;
     }
 
     .info-list {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 11px;
+      margin-top: 12px;
     }
 
     .info-list li {
-      font-size: 13.6px;
-      line-height: 1.66;
-      color: var(--text-secondary);
-      background-color: rgba(255, 255, 255, 0.015);
-      border: 1px solid rgba(255, 255, 255, 0.045);
-      border-left: 3px solid var(--border-strong);
-      border-radius: 12px;
-      padding: 12px 14px;
+      font-size: 13.8px;
+      line-height: 1.62;
+      color: #d4d4d8;
+      padding-left: 12px;
+      border-left: 2px solid #3f3f46;
     }
 
-    .item-title {
-      display: block;
-      font-size: 14px;
-      font-weight: 600;
+    .info-list strong {
       color: #ffffff;
-      margin-bottom: 4px;
-    }
-
-    .step-list {
-      list-style: none;
-      counter-reset: step-counter;
-      display: flex;
-      flex-direction: column;
-      gap: 9px;
-      margin-top: 10px;
-    }
-
-    .step-list li {
-      counter-increment: step-counter;
-      position: relative;
-      padding: 10px 12px 10px 40px;
-      background-color: rgba(255, 255, 255, 0.015);
-      border: 1px solid rgba(255, 255, 255, 0.045);
-      border-radius: 11px;
-      font-size: 13.4px;
-      color: var(--text-secondary);
-    }
-
-    .step-list li::before {
-      content: counter(step-counter);
-      position: absolute;
-      left: 12px;
-      top: 11px;
-      width: 20px;
-      height: 20px;
-      border-radius: 6px;
-      background-color: rgba(56, 189, 248, 0.14);
-      border: 1px solid rgba(56, 189, 248, 0.3);
-      color: var(--accent-azure);
-      font-size: 11.5px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .tip-box {
-      margin-top: 12px;
-      padding: 11px 13px;
-      border-radius: 12px;
-      background-color: rgba(56, 189, 248, 0.06);
-      border: 1px solid rgba(56, 189, 248, 0.2);
-      font-size: 12.8px;
-      color: #cbd5e1;
-    }
-
-    .tip-box strong {
-      color: var(--accent-azure);
     }
 
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-size: 12.2px;
-      background-color: #21212c;
-      color: #e2e8f0;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 1.5px 6px;
-      border-radius: 6px;
-    }
-
-    /* Links Section */
-    .links-box {
-      margin-top: 22px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .links-title {
-      text-align: center;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: var(--text-muted);
-      margin-bottom: 14px;
+      font-size: 12.8px;
+      background-color: #1c1c22;
+      color: #f4f4f5;
+      padding: 1px 5px;
+      border-radius: 5px;
     }
 
     .links {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      margin-top: 20px;
     }
 
     .btn {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      justify-content: center;
+      gap: 10px;
       width: 100%;
-      min-height: 54px;
+      min-height: 50px;
       padding: 14px 18px;
-      border-radius: 14px;
+      border-radius: 12px;
       font-size: 15px;
       font-weight: 600;
       line-height: 1.3;
       text-decoration: none;
       -webkit-tap-highlight-color: transparent;
+      transition: background-color 0.15s ease, transform 0.12s ease;
     }
 
-    .btn-left {
-      display: flex;
-      align-items: center;
-      gap: 11px;
+    .btn:active {
+      transform: scale(0.98);
     }
 
-    .btn-arrow {
-      font-size: 16px;
-      opacity: 0.85;
-    }
-
-    .btn-discord {
-      background-color: var(--accent-discord);
+    .btn-discord,
+    .btn-discord span {
+      background-color: #24242c;
       color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.14);
-      box-shadow: 0 10px 24px rgba(88, 101, 242, 0.25);
+      border: 1px solid #52525b;
     }
 
     .btn-discord span {
-      color: #ffffff;
+      background-color: transparent;
+      border: none;
     }
 
     .btn-discord:hover {
-      background-color: var(--accent-discord-hover);
+      background-color: #2e2e38;
     }
 
-    .btn-tiktok {
+    .btn-tiktok,
+    .btn-tiktok span {
       background-color: #ffffff;
-      color: #09090b;
+      color: #050505;
       border: 1px solid #ffffff;
-      box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
     }
 
     .btn-tiktok span {
-      color: #09090b;
+      background-color: transparent;
+      border: none;
     }
 
     .btn-tiktok:hover {
-      background-color: #f1f5f9;
+      background-color: #e4e4e7;
     }
 
     .icon-svg {
@@ -420,156 +177,12 @@
       flex-shrink: 0;
       display: block;
     }
-
-    .footer-note {
-      margin-top: 18px;
-      text-align: center;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-
-    @media (min-width: 540px) {
-      body {
-        padding: 28px 16px 48px;
-      }
-
-      .box {
-        padding: 34px 28px;
-      }
-
-      .avatar {
-        width: 108px;
-        height: 108px;
-      }
-
-      h1 {
-        font-size: 24px;
-      }
-    }
   </style>
 </head>
 <body>
   <main class="box">
-    <header class="header">
-      <div class="avatar-wrap">
-        <img
-          id="community-avatar"
-          class="avatar"
-          src="https://cdn.discordapp.com/attachments/1568204986909724805/1573632237797376082/61DD7773-2649-43FE-B36B-A2276C58D790.png?ex=6b02b6ba&is=6b01653a&hm=043d7a8b46fe8c5ef400c234a4b2f04fff33e6867a68e1cbc53bfd89ae3e1f1c&"
-          alt="Azure Community Avatar"
-        />
-      </div>
-      <div class="badge">
-        <span class="badge-dot"></span>
-        <span>Minecraft Java on iOS</span>
-      </div>
-      <h1>Azure Community / Launcher Support 🛠</h1>
-      <p class="subtitle">Cộng đồng hỗ trợ, kiến thức launcher, cấu hình hiệu năng &amp; cài đặt trên iOS</p>
-    </header>
-
-    <div class="toolbar" aria-label="Language & Navigation">
-      <div class="lang-group" role="group" aria-label="Language filter">
-        <button type="button" class="lang-btn active" data-lang="all">Tất cả / All</button>
-        <button type="button" class="lang-btn" data-lang="vi">Tiếng Việt</button>
-        <button type="button" class="lang-btn" data-lang="en">English</button>
-      </div>
-      <nav class="quick-nav" aria-label="Quick sections">
-        <a class="nav-pill" href="#how-it-works">Cơ chế</a>
-        <a class="nav-pill" href="#sidestore">SideStore</a>
-        <a class="nav-pill" href="#links-section">Liên kết</a>
-      </nav>
-    </div>
-
-    <!-- VIETNAMESE SECTION -->
-    <section class="section lang-block active" data-lang-section="vi">
-      <div class="section-header">
-        <span class="label">Tiếng Việt</span>
-        <span class="section-tag">Hướng dẫn chi tiết</span>
-      </div>
-
-      <p class="intro-text">
-        <strong>Azure Community / Launcher Support 🛠</strong> là nơi tập trung chia sẻ kinh nghiệm, tối ưu hiệu năng, cấu hình renderer và hỗ trợ cài đặt <strong>Minecraft Java Edition</strong> trên iPhone/iPad. Tham gia Server Discord để trao đổi trực tiếp và follow TikTok <code>@nexusamethyst</code> để xem video hướng dẫn thực tế.
-      </p>
-
-      <div class="sub-heading">1. Tổng quan các Launcher trên iOS</div>
-      <ul class="info-list">
-        <li>
-          <span class="item-title">Launcher iOS là gì?</span>
-          Vì iOS không hỗ trợ trực tiếp tệp <code>.jar</code> và máy ảo Java desktop như PC, launcher đóng vai trò quản lý phiên bản game, môi trường chạy Java (JVM), modloader (như Fabric) và lớp dịch đồ họa để Minecraft Java chạy được trên iPhone/iPad.
-        </li>
-        <li>
-          <span class="item-title">Witch Launcher là gì?</span>
-          Trình khởi chạy Minecraft Java trên iOS ưu tiên giao diện gọn gàng, dễ làm quen, quản lý phiên bản &amp; mod thuận tiện và hỗ trợ tinh chỉnh nhanh cho người dùng muốn trải nghiệm mượt mà không quá rườm rà.
-        </li>
-        <li>
-          <span class="item-title">Amethyst Launcher là gì?</span>
-          Launcher mã nguồn mở cho iOS tập trung vào hiệu năng và khả năng tùy biến sâu: quản lý nhiều runtime Java, chuyển đổi linh hoạt giữa các renderer đồ họa, tinh chỉnh tham số JVM và cấu hình nâng cao theo từng đời chip/RAM của thiết bị.
-        </li>
-      </ul>
-
-      <div id="how-it-works" class="sub-heading">2. Cách hoạt động &amp; Tối ưu hiệu năng</div>
-      <ul class="info-list">
-        <li>
-          <span class="item-title">Chuẩn bị Runtime Java &amp; Modloader:</span>
-          Khi mở game, launcher tải/chuẩn bị gói tài nguyên phiên bản và phiên bản Java tương thích (thường là <code>Java 17</code>, <code>Java 21</code> hoặc <code>Java 25</code> tùy bản Minecraft), kết hợp modloader như Fabric cùng các mod tối ưu phổ biến (<code>Sodium</code>, <code>Lithium</code>, <code>FerriteCore</code>, <code>ModernFix</code>...).
-        </li>
-        <li>
-          <span class="item-title">Dịch lệnh đồ họa sang Metal của iOS:</span>
-          Minecraft Java dựng hình bằng OpenGL hoặc Vulkan, trong khi iOS dùng API đồ họa <code>Metal</code>. Các renderer như <code>MobileGlues</code>, <code>Zink</code>, <code>LTW</code>, <code>gl4es</code> hoặc <code>MoltenVK</code> sẽ dịch và chuyển tiếp lệnh vẽ sang GPU của iPhone/iPad—mỗi renderer phù hợp một nhóm phiên bản/shader/thiết bị khác nhau.
-        </li>
-        <li>
-          <span class="item-title">Vai trò của JIT &amp; Cấu hình máy:</span>
-          Một số cấu hình hoặc bản launcher/JVM có thể tận dụng JIT (Just-In-Time compilation) để tăng tốc biên dịch mã thực thi, giúp khung hình ổn định hơn, bên cạnh việc cân đối mức RAM cấp phát và khoảng cách render hợp lý để tránh tràn bộ nhớ hoặc quá nhiệt.
-        </li>
-      </ul>
-
-      <div id="sidestore" class="sub-heading">3. Quy trình cài đặt bằng SideStore trên iOS</div>
-      <ol class="step-list">
-        <li>Cài <strong>SideStore</strong> lên thiết bị thông qua công cụ ký ứng dụng phù hợp và đăng nhập tài khoản Apple ID của bạn.</li>
-        <li>Bật kết nối VPN nội bộ / <code>LocalDevVPN</code> (và công cụ hỗ trợ kích hoạt JIT như <code>StikDebug</code> nếu phiên bản/cấu hình bạn dùng yêu cầu).</li>
-        <li>Mở SideStore, chọn tệp <code>.ipa</code> của Launcher và tiến hành cài đặt lên máy.</li>
-        <li>Vào <em>Cài đặt → Cài đặt chung → Quản lý VPN &amp; Thiết bị</em> để tin cậy chứng chỉ nhà phát triển của tài khoản Apple ID.</li>
-        <li><strong>Gia hạn định kỳ:</strong> Với tài khoản Apple ID miễn phí, chứng chỉ có chu kỳ ngắn ngày—hãy mở SideStore làm mới (<em>Refresh</em>) định kỳ trước hạn để app không bị gián đoạn.</li>
-      </ol>
-
-      <div class="tip-box">
-        <strong>Mẹo nhỏ:</strong> Khi đổi renderer hoặc thêm mod/shader nặng, hãy test từng thay đổi một và theo dõi mức tiêu thụ RAM/nhiệt độ máy để tìm cấu hình ổn định nhất cho thiết bị của bạn.
-      </div>
-    </section>
-
-    <!-- ENGLISH SECTION -->
-    <section class="section lang-block active" data-lang-section="en">
-      <div class="section-header">
-        <span class="label">English</span>
-        <span class="section-tag">Detailed Guide</span>
-      </div>
-
-      <p class="intro-text">
-        <strong>Azure Community / Launcher Support 🛠</strong> is a dedicated hub for sharing setups, tuning performance, configuring graphics renderers, and troubleshooting <strong>Minecraft Java Edition</strong> on iPhone and iPad. Join our Discord Server for direct support and follow TikTok <code>@nexusamethyst</code> for video guides.
-      </p>
-
-      <div class="sub-heading">1. iOS Launchers Overview</div>
-      <ul class="info-list">
-        <li>
-          <span class="item-title">What is an iOS Launcher?</span>
-          Because iOS does not natively run desktop <code>.jar</code> files or standard desktop JVM setups, an iOS launcher manages game versions, Java runtimes (JVM), modloaders (such as Fabric), and graphics translation layers so Minecraft Java can launch on mobile.
-        </li>
-        <li>
-          <span class="item-title">Witch Launcher:</span>
-          An iOS Minecraft Java launcher focused on a clean, accessible experience with straightforward version/mod handling and quick configuration options for everyday play.
-        </li>
-        <li>
-          <span class="item-title">Amethyst Launcher:</span>
-          An open-source iOS launcher built for smooth Minecraft Java gameplay, offering deeper control over Java runtimes, graphics renderers, JVM flags, and device-specific tuning.
-        </li>
-      </ul>
-
-      <div class="sub-heading">2. How It Works &amp; Performance Tuning</div>
-      <ul class="info-list">
-        <li>
-          <span class="item-title">Java Runtime &amp; Modloader Setup:</span>
-          The launcher prepares game files alongside a matching Java runtime (such as <code>Java 17</code>, <code>Java 21</code>, or <code>Java 25</code> depending on the Minecraft version) and loads modloaders like Fabric with performance mods (<code>Sodium</code>, <code>Lithium</code>, <code>FerriteCore</code>, <code>ModernFix</code>).
-        </li>
-        <li>
-          <span class="item-title">OpenGL / Vulkan to iOS Metal Translation:</span>
-          Minecraft Java renders via OpenGL or Vulkan, whereas iOS uses <code>Metal</code>. Renderers such as <code>MobileGlues</code>, <code>Zink</code>, <code>LTW</code>, <code>gl4es</code>, or <code>MoltenVK</code> translate rendering calls for iOS GPUs, with different trade-offs across game versions, mods, and shaders.
+    <div class="avatar-wrap">
+      <img
+        id="community-avatar"
+        class="avatar"
+        src="
