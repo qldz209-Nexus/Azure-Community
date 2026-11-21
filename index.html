@@ -60,6 +60,32 @@
       border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
+    .avatar-wrap {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      background-color: #18181f;
+      border: 2px solid rgba(255, 255, 255, 0.22);
+      box-shadow:
+        0 12px 28px rgba(0, 0, 0, 0.65),
+        0 0 0 4px rgba(255, 255, 255, 0.04);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .avatar:hover {
+      transform: scale(1.03);
+      border-color: rgba(255, 255, 255, 0.45);
+    }
+
     .badge {
       display: inline-flex;
       align-items: center;
@@ -287,6 +313,11 @@
         padding: 34px 28px;
       }
 
+      .avatar {
+        width: 106px;
+        height: 106px;
+      }
+
       h1 {
         font-size: 24px;
       }
@@ -296,6 +327,13 @@
 <body>
   <main class="box">
     <header class="header">
+      <div class="avatar-wrap">
+        <img
+          class="avatar"
+          src="avatar.png"
+          alt="Azure Community Avatar"
+        />
+      </div>
       <div class="badge">
         <span class="badge-dot"></span>
         <span>Minecraft Java on iOS</span>
